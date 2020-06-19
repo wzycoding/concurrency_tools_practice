@@ -46,14 +46,14 @@ public class LockDemo {
         // 字符串打印方法，一个个字符的打印
         public void output(String name) {
             int len = name.length();
-//            lock.lock();
+            lock.lock();
             try {
                 for (int i = 0; i < len; i++) {
                     System.out.print(name.charAt(i));
                 }
                 System.out.println("");
             } finally {
-//                lock.unlock();
+                lock.unlock();
             }
         }
     }
