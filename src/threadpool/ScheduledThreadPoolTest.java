@@ -6,7 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 public class ScheduledThreadPoolTest {
     public static void main(String[] args) {
-        ScheduledExecutorService threadPool = Executors.newScheduledThreadPool(10);
+        ScheduledExecutorService threadPool =
+                Executors.newScheduledThreadPool(10);
 //        threadPool.schedule(new Task(), 5, TimeUnit.SECONDS);
         // 以一定频率运行任务
         threadPool.scheduleAtFixedRate(new Task(), 1, 3, TimeUnit.SECONDS);

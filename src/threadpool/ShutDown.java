@@ -3,7 +3,6 @@ package threadpool;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 演示关闭线程池
@@ -17,7 +16,7 @@ public class ShutDown {
         Thread.sleep(1500);
         List<Runnable> runnableList = executorService.shutdownNow();
         System.out.println(runnableList);
-//        executorService.shutdown();
+        executorService.shutdown();
 //        boolean b = executorService.awaitTermination(7, TimeUnit.SECONDS);
 //        System.out.println(b);
 //        System.out.println(executorService.isShutdown());

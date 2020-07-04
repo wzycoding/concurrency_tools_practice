@@ -1,5 +1,6 @@
 package threadpool;
 
+import java.util.concurrent.Executors;
 
 public class ForLoop {
 
@@ -8,6 +9,7 @@ public class ForLoop {
             Thread thread = new Thread(new Task());
             thread.start();
         }
+        Executors.newFixedThreadPool(1);
     }
 
     static class Task implements Runnable {

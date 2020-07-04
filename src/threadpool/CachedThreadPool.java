@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * 演示newSingleTreadExecutor
+ * 演示newCachedThreadPool
  */
 public class CachedThreadPool {
     public static void main(String[] args) {
