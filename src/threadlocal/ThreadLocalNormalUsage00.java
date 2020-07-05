@@ -34,7 +34,5 @@ public class ThreadLocalNormalUsage00 {
                 System.out.println(date);
             }
         }).start();
-
-
     }
 }

@@ -46,6 +46,7 @@ class ThreadSafeFormatter {
         }
     };
 
+    // 也可以使用Lambada表达式方式进行实现
     public static ThreadLocal<SimpleDateFormat> dateFormatThreadLocal2 =
             ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"));
 
