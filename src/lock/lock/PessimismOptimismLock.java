@@ -2,6 +2,9 @@ package lock.lock;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * 演示乐观锁和悲观锁
+ */
 public class PessimismOptimismLock {
     int a;
     // 悲观锁

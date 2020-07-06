@@ -3,7 +3,7 @@ package lock.reentranlock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- *
+ * 获取已经获取了几次锁
  */
 public class GetHoldCount {
     private static ReentrantLock lock = new ReentrantLock();
@@ -23,6 +23,5 @@ public class GetHoldCount {
         lock.unlock();
         System.out.println(lock.getHoldCount());
         lock.unlock();
-
     }
 }

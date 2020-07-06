@@ -21,6 +21,10 @@ public class FairLock {
     }
 
 }
+
+/**
+ * 要执行的任务，调用打印队列去打印
+ */
 class Job implements Runnable {
     PrintQueue printQueue;
     public Job(PrintQueue printQueue) {
@@ -34,17 +38,22 @@ class Job implements Runnable {
         System.out.println(Thread.currentThread().getName() + "打印完毕");
     }
 }
+
+/**
+ * 执行打印队列
+ */
 class PrintQueue {
-    // 公平锁
-//    private Lock queueLock = new ReentrantLock(true);
+    // 公平锁：想打印必须拿到锁，模拟打印机只有一台
+    private Lock queueLock = new ReentrantLock(true);
     // 非公平锁
-    private Lock queueLock = new ReentrantLock(false);
+//    private Lock queueLock = new ReentrantLock(false);
 
     public void printJob(Object document) {
+        // 打印第一次
         queueLock.lock();
         try {
             int duration = new Random().nextInt(10) + 1;
-            System.out.println(Thread.currentThread().getName() + "正在打印，需要" + duration);
+            System.out.println(Thread.currentThread().getName() + "正在打印，需要" + duration + "秒");
             Thread.sleep(duration * 1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -52,10 +61,11 @@ class PrintQueue {
             queueLock.unlock();
         }
 
+        // 打印第二次
         queueLock.lock();
         try {
             int duration = new Random().nextInt(10) + 1;
-            System.out.println(Thread.currentThread().getName() + "正在打印，需要" + duration);
+            System.out.println(Thread.currentThread().getName() + "正在打印，需要" + duration + "秒");
             Thread.sleep(duration * 1000);
         } catch (InterruptedException e) {
             e.printStackTrace();

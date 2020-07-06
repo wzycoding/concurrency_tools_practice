@@ -3,6 +3,11 @@ package lock.lock;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 演示lockInterruptibly方法演示中断
+ * 1、在睡眠时中断
+ * 2、等锁的时候中断。
+ */
 public class LockInterruptibly implements Runnable {
     private Lock lock = new ReentrantLock();
     @Override
