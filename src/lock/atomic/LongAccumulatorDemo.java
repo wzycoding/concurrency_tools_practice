@@ -16,7 +16,6 @@ public class LongAccumulatorDemo {
 
     public static void main(String[] args) {
         // 使用LongAccumulator更灵活，效率高
-        // x初始值，y后来的值，当前值作为初始值，计算下一个值
         // x为传进来的值，y为上次计算结果值
         LongAccumulator accumulator =
                 new LongAccumulator((x, y) -> x + y, 100);
